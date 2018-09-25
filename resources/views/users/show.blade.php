@@ -16,9 +16,9 @@
                     {{$user->userUniversityId}}
                 </h4>--}}
             </div> 
-            {{-- <div class="card-body">
+            <div class="card-body">
              {{$user->firstName}}
-            </div> --}}
+            </div>
         </div>
     </div>
 </body>
