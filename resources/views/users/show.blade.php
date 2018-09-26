@@ -11,10 +11,10 @@
     <div class="container">
         <h1>Usuários</h1>            
         <div class="card card-default">
-            {{-- <div class="card-heading">
+            <div class="card-heading">
                 <h4>
                     {{$user->userUniversityId}}
-                </h4>--}}
+                </h4>
             </div> 
             <div class="card-body">
              {{$user->firstName}}

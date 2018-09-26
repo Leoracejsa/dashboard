@@ -29,7 +29,7 @@ class UsuariosController extends Controller
             'timeout'  => 2.0,
         ]);
         
-        $response = $client->request('GET', "user/{$id}");
+        $response = $client->request('GET', "users/{$id}");
         
             $user = json_decode( $response->getBody()->getContents());
         

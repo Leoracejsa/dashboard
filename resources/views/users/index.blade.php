@@ -9,22 +9,21 @@
 </head>
 <body>
     <div class="container">
-        <h1>Usuários</h1>
+        <h1>Listando os Usuários</h1>
             @foreach($users as $user)
                 <div class="card card-default">
                     <div class="card-body">
                         <a href="/users/{{$user->id}}">
-                            {{ $user->firstName }}
-                            {{ $user->lastName }}
-                            {{ $user->userDocument }}
-                            {{ $user->userBornDate }}
-                            {{ $user->userEmail }}
-                            {{ $user->userFunction }}
+                            Nome: {{ $user->firstName }}<br>
+                            Sobrenome: {{ $user->lastName }}<br>
+                            Documento: {{ $user->userDocument }}<br>
+                            Data de Nascimento: {{ $user->userBornDate }}<br>
+                            E-mail: {{ $user->userEmail }}<br>
+                            Função: {{ $user->userFunction }}<br>
                         </a>
                     </div>
                 </div>
             @endforeach
-
     </div>
 </body>
 </html>
