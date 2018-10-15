@@ -1,25 +1,30 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/app.css">
-    <title>Document</title>
-</head>
-<body>
-    <div class="container">
-        <h1>Usuários</h1>            
-        <div class="card card-default">
-            <div class="card-heading">
-                <h4>
-                    {{$user->userUniversityId}}
-                </h4>
-            </div> 
-            <div class="card-body">
-             {{$user->firstName}}
+@extends('layouts.app')
+@section('page-header')
+    <h1>
+        Usuário
+        <small>{{ $user->firstName }}</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="{{ route('users.index') }}">Usuários</a></li>
+        <li class="active">{{ $user->firstName }}</li>
+    </ol>
+@endsection
+@section('content')
+    <div class="">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12">
+                <div class="box box-default">
+                    <div class="box-body with-border">
+                        Nome: {{ $user->firstName }}<br>
+                        Sobrenome: {{ $user->lastName }}<br>
+                        Documento: {{ $user->userDocument }}<br>
+                        Data de Nascimento: {{ $user->userBornDate }}<br>
+                        E-mail: {{ $user->userEmail }}<br>
+                        Função: {{ $user->userFunction }}<br>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
-</body>
-</html>
+@endsection
