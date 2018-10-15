@@ -3,7 +3,9 @@
 @section('content')
     <div class="login-box" style="margin-bottom:0">
         <div class="login-logo">
-            <b>Projeto</b>
+            <span class="logo-lg"><b>Aplicando </b>Educação</span>
+           <img src="../img/logo.png" alt="">
+
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
