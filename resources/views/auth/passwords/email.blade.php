@@ -1,6 +1,47 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (session('status'))
+        <div class="alert alert-success" role="alert">
+            {{ session('status') }}
+        </div>
+    @endif
+    <div class="login-box" style="margin-bottom:0">
+        <div class="login-logo">
+            <b>Projeto</b>
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            <p class="login-box-msg">Recuperar Senha</p>
+            <form method="POST" action="{{ route('password.email') }}">
+                @csrf
+                <div class="form-group has-feedback">
+                    <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    @if ($errors->has('email'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
+                </div>
+                <div class="row">
+                    <!-- /.col -->
+                    <div class="col-xs-12">
+                        <button type="submit" class="btn btn-primary btn-block btn-flat">
+                            Recuperar
+                        </button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </form>
+            <!-- /.social-auth-links -->
+            <br>
+            <a href="{{ url('/login') }}" class="text-center center-block">Voltar</a>
+        </div>
+        <!-- /.login-box-body -->
+    </div>
+@endsection
+@section('content-old')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -8,11 +49,7 @@
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+
 
                     <form method="POST" action="{{ route('password.email') }}">
                         @csrf
